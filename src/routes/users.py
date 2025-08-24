@@ -1,7 +1,5 @@
 from flask import request, jsonify
-from models import db, User, Follower, Post
-
-
+from models import db, User, Character, Planet, Favorite
 def register_user_routes(app):
 
     @app.route("/users", methods=["GET", "POST"])

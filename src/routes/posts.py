@@ -1,5 +1,5 @@
 from flask import request, jsonify
-from models import db, Post, Comment, Media
+from models import db, User, Character, Planet, Favorite
 
 
 def register_post_routes(app):
