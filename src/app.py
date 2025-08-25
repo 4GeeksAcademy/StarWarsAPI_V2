@@ -9,8 +9,9 @@ from utils import APIException, generate_sitemap
 from admin.setup_admin import setup_admin
 
 from models import db
+from routes.planets import register_planet_routes
+from routes.characters import register_character_routes
 from routes.users import register_user_routes
-from routes.posts import register_post_routes
 
 app = Flask(__name__)
 app.url_map.strict_slashes = False
@@ -42,8 +43,9 @@ def sitemap():
     return generate_sitemap(app)
 
 
+register_planet_routes(app)
+register_character_routes(app)
 register_user_routes(app)
-register_post_routes(app)
 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 3000))
